@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{a43ffd7a-1c21-4a3a-b7f6-1c4d1b5e93ed}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>www\app.py</StartupFile>
+    <StartupFile>www\testOrm.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -20,15 +20,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="www\app.py" />
+    <Compile Include="www\models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="www\orm.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="www\testOrm.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="www" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\schema.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

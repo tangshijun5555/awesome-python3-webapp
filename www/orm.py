@@ -12,10 +12,10 @@ def log(sql, args=()):
 '''为了简化并更好地标识异步IO，从Python 3.5开始引入了新的语法async和await，可以让coroutine的代码更简洁易读。
 下面是替换的例子
 
-@asyncio.coroutine
+@asyncio.coroutine  #区别
 def hello():
     print("Hello world!")
-    r = yield from asyncio.sleep(1)
+    r = yield from asyncio.sleep(1)     #区别
     print("Hello again!")
 
 async def hello():
@@ -43,7 +43,7 @@ async def create_pool(loop, **kw):
 
 
 async def select(sql, args, size=None):
-	' 实现SQL语句：SELECT。传入参数分别为SQL语句、SQL语句中占位符对应的参数集、返回记录行数 '
+	''' 实现SQL语句：SELECT。传入参数分别为SQL语句、SQL语句中占位符对应的参数集、返回记录行数 '''
 	log(sql, args)
 	global __pool #使用全局变量__pool
 	async with __pool.acquire() as conn: #从连接池中获取一个连接，使用完后自动释放
